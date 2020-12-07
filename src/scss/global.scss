@@ -1,0 +1,109 @@
+@import 'Reset';
+@import 'Mixins';
+
+form{
+
+  input{
+    display: block;
+  }
+
+}
+
+.user_line{
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  @include padding-vertical(2vmin);
+  border: 1px solid black;
+
+  div{
+    border-right: 1px solid black;
+    text-align: center;
+    height: 100%;
+  }
+}
+
+.profile{
+  display: grid;
+  grid-template-rows: 10fr 1fr 1fr;
+  align-items: center;
+
+  .user_avatar{
+    text-align: center;
+
+    img{
+      width:40vw;
+      height: auto;
+    }
+  }
+
+  .user_profile_info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+
+    @include padding-vertical(2vmax)
+  }
+}
+
+button{
+  background-color: #386ead;
+  border: none;
+  border-radius: 0.33vw;
+  box-shadow: 0.25vw 0.25vw 0 lighten(#386ead, 20%);
+  font-size: 2vh;
+  padding: 1vh;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  
+  &:active{
+    box-shadow: none;
+    transform: translate(0.25vw, 0.25vw);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  @media (orientation: portrait){
+    padding: 2vw;
+    font-size: 4vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    position: relative;
+    left: 5%;
+    width: 90%;
+  }
+}
+
+form{
+
+  label{
+    font-size: 2.5vh;
+    display: block;
+    margin-bottom: 1vh;
+    @media (orientation: portrait){
+        text-align: center;
+        font-size: 4.5vw;
+        margin-bottom: 2.5vw;
+    }
+  }
+  
+  input, select{
+    display: block;
+    margin-bottom: 2vh;
+    font-size: 2vh;
+    position: relative;
+    padding: 1vh;
+    border-radius: 0.33vw;
+    @media (orientation: portrait){
+      text-align: center;
+      width: 90%;
+      margin-bottom: 3.5vw;
+      font-size: 4vw;
+      padding: 2vw;
+    }
+  }
+
+}
